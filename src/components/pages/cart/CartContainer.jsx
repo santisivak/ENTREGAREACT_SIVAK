@@ -10,10 +10,10 @@ const CartContainer = () => {
 
   let limpiar = () => {
     Swal.fire({
-      title: "seguro quieres eliminar todo ?",
+      title: "Seguro quieres eliminar todo?",
       showDenyButton: true,
       showCancelButton: false,
-      confirmButtonText: "si, limpiar",
+      confirmButtonText: "Si, limpiar",
       denyButtonText: `No, no limpiar`,
     }).then((result) => {
       if (result.isConfirmed) {
@@ -28,7 +28,7 @@ const CartContainer = () => {
   let total = getTotalPrice();
   return (
     <div>
-      <h1>Estoy en el carrito</h1>
+      <h1>Este es el carrito</h1>
 
       {cart.map((elemento) => {
         return (
@@ -49,7 +49,7 @@ const CartContainer = () => {
       {cart.length > 0 && (
         <>
           <Button variant="outlined" onClick={limpiar}>
-            Limpiar carrito
+            Vaciar carrito
           </Button>
           <Link to="/checkout">
             <Button variant="outlined">Terminar compra</Button>

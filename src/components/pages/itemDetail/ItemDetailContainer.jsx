@@ -5,7 +5,7 @@ import { CartContext } from "../../../context/CartContext";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { db } from "../../../firebaseConfig";
-import {getDoc, collection, doc} from "firebase/firestore"
+import { getDoc, collection, doc } from "firebase/firestore";
 
 const ItemDetailContainer = () => {
   const [product, setProduct] = useState({});
@@ -17,10 +17,9 @@ const ItemDetailContainer = () => {
   let cantidadEnCarrito = getQuantityById(id);
 
   useEffect(() => {
-    let refCollection = collection( db , "products" )
-    let refDoc = doc( refCollection, id )
-    getDoc(refDoc).then( res => setProduct({...res.data(), id: res.id}))
-
+    let refCollection = collection(db, "products");
+    let refDoc = doc(refCollection, id);
+    getDoc(refDoc).then((res) => setProduct({ ...res.data(), id: res.id }));
   }, [id]);
 
   const agregarAlCarrito = (cantidad) => {
@@ -30,7 +29,7 @@ const ItemDetailContainer = () => {
     };
 
     addToCart(data);
- 
+
     toast.success("Producto agregado", {
       position: "top-right",
       autoClose: 5000,
@@ -56,7 +55,3 @@ const ItemDetailContainer = () => {
 };
 
 export default ItemDetailContainer;
-
-// Number("12") ---> 12
-// parseInt("12") --->12
-// +"12" --->12

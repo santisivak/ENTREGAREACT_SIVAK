@@ -25,7 +25,6 @@ const CheckoutContainer = () => {
   const handleSubmit = (evento) => {
     evento.preventDefault();
 
-    // AXIOS.POST("dasdasdas", userData)
     let order = {
       buyer: userData,
       items: cart,
@@ -33,11 +32,9 @@ const CheckoutContainer = () => {
       date: serverTimestamp(),
     };
 
-    // CREAR UNA ORDEN DE COMPRA
     let ordersCollections = collection(db, "orders");
     addDoc(ordersCollections, order).then((res) => setOrderId(res.id));
 
-    // MODIFICAR TODOS LOS PRODUCTOS EN SU STOCK
     cart.forEach((elemento) => {
       updateDoc(doc(db, "products", elemento.id), {
         stock: elemento.stock - elemento.quantity,
