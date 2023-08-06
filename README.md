@@ -7,21 +7,17 @@
 
 ![](/public/vite.svg)
 
-[ir a google](https://www.google.com.ar/)
-
-### para levantar el proyecto bla bla
+### para clonar el proyecto, pegar el siguiente texto en la consola
 
 ```
-git clone https://dasdasds:2131
+git clone https://github.com/santisivak/ENTREGAREACT_SIVAK.git
 ```
 
 ```javascript
+const a = 2;
+const b = 3;
 
-const a = 2
-const b = 3
-
-const sumar = ()=>{
-    a + b
-}
-
+const sumar = () => {
+  a + b;
+};
 ```
